@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project 2</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+            flex-direction: column;
+            background-color:bisque;
+            /* opacity:0.6; */
+            margin-bottom:-6%;
+            box-shadow:2px 2px 2px black;
+        }
+
+        #navbar ul li a {
+            font-size: 1rem;
+            padding: 0px 7px;
+            padding-bottom: 100px;
+            /* text-shadow:3px 3px 3px black; */
+        }
+
+        #navbar ul {
+            display: flex;
+            padding:3%;
+            box-shadow:4px 4px 5px black,-4px -4px 5px black
+
+        }
+
+        #navbar ul li {
+            list-style:none;
+            list-style-image:georgian url("/ak.jpg");
+        }
+
+        #logo {
+            margin: 10px 34px;
+            /* left:2px; */
+            transition:all 2s ease;
+        }
+        #logo:hover{
+            /* transform:scale(1.1); */
+            /* transform:translateX(123px); */
+            opacity:1;
+            cursor:not-allowed;
+            
+
+        }
+
+        #logo img {
+            height: 59px;
+            margin: 3px 6px;
+            position:absolute;
+            left:2px;
+        }
+
+        #navbar ul li a {
+            color: black;
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+            opacity:1;
+        }
+        #navbar ul li a:hover{
+            color:white;
+            text-shadow:1px 1px 4px white;
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            padding: 3px 200px;
+            height: 550px;
+            justify-content: center;
+            align-items: center;
+            /* margin-bottom:0; */
+        }
+
+        #home h1 {
+            color: black;
+            text-align: center;
+            text-shadow:1px 1px 2px black;
+            
+
+        }
+
+        #home p {
+            color: black;
+            text-align: center;
+            font-size: 1.5rem;
+            text-shadow:1px 1px 1px black;
+
+        }
+        #home::before{
+            content:'';
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:url('https://media.istockphoto.com/photos/seamless-food-background-made-of-opened-canned-food-picture-id1348369752?b=1&k=20&m=1348369752&s=170667a&w=0&h=qO0uQSCqPhqOpXumVH-mfulVvITddkgY4AzsGEk5zlM=') no-repeat center center/cover;
+            z-index:-1;
+            opacity:0.7;
+           
+        }
+
+        #services {
+            display: flex;
+            margin: 34px;
+
+
+        }
+
+        #services .box {
+            border: 2px solid black;
+            padding: 34px;
+            margin: 2px 55px;
+            margin-bottom: 20px;
+
+        }
+
+        #services .box img {
+            height: 160px;
+            margin: auto;
+            display: block;
+        }
+
+        /* #services .box p {} */
+        #services .box{
+            border:2px solid black;
+            padding:34px;
+            margin:2px 55px;
+            margin-bottom:20px;
+        }
+        #client-section{
+            position:relative;
+            
+        }
+        /* #clients .client-items{
+            border:2px solid black;
+            padding:34px;
+            margin:2px 55px;
+            margin-bottom:20px;
+        } */
+        #clients{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+                .client-items img{
+                    height:94px;
+                    display:flex;
+                    z-index: -1;
+
+
+                }
+        .client-items{
+            padding:34px;
+            /* background-color:antiquewhite; */
+        }
+        #client img{
+            height:24px;
+        }
+        #client-section::before{
+            content:"";
+            width:100%;
+            position:absolute;
+            height:100%;
+            background:url('https://media.istockphoto.com/photos/handsome-black-african-american-food-delivery-courier-posing-in-front-picture-id1293175039?b=1&k=20&m=1293175039&s=170667a&w=0&h=t2sJv7uWaH1DAWL-VuTSAo5d5GncF35dZ_PN7-A5KNk=') no-repeat center center/cover;
+            z-index:-1;
+            opacity:0.6;
+        }
+        #contact{
+            position:relative;
+        }
+        #contact-box{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding-bottom:14px;
+
+        }
+        #contact-box form{
+            width:40%;
+        }
+        #contact-box textarea{
+            width:100%;
+            padding:0.5rem;
+            border-radius:3px;
+            font-size:1.5rem;
+        }
+        #contact-box label{
+            font-size:1.3rem;
+        }
+        #contact::before{
+            content:"";
+            position:absolute;
+            width:100%;
+            height:100%;
+            z-index:-1;
+            opacity:0.6;
+            background:url('https://images.unsplash.com/photo-1514163061636-02db31852e84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdCUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+    
+        }
+        .btn{
+            padding:6px;
+            border:2px solid black;
+            margin:17px;
+            cursor:pointer;
+            transition:all 1s ease-in;
+        }
+        .btn:hover{
+            transform:scale(1.3);
+            background-color:brown;
+            color:white;
+            box-shadow:2px 2px 2px yellow;
+            border-radius:23px;
+            opacity:.9;
+            font-size:80%;
+        }
+        .h-primary{
+            font-size:1.4rem;
+            padding:34px;
+        }
+        .h-primary center{
+            text-align:center;
+        }
+        #clients .client-items img{
+            height:29px;
+            padding:2px 8px;
+            display:block;
+            margin:auto;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="Loading....">
+        </div>
+        <ul>
+            <li class="item"><a href="Home">Home</a> </li>
+            <li class="item"><a href="Home">services</a> </li>
+            <li class="item"><a href="Home">About us</a> </li>
+            <li class="item"><a href="Home">Contact us</a> </li>
+        </ul>
+        </div>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">Welcome to MyonlineFood</h1>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore deserunt quibusdam minus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veritatis aperiam iste!
+        </p>
+        <button class="btn">Order Now</button>
+    </section>
+    <section id="service-container">
+        <h1 class="h-primary center">
+            Our Products
+        </h1>
+        <div id='services'>
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60" alt="Loading....">
+                <h2 class="classh2">Food catering</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem odio sunt modi!</p>
+            </div>
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60" alt="Loading.....">
+                <h2 class="classh2">Bulk catering</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ipsa voluptatibus fugit.</p>
+            </div>
+            <div class="box">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60" alt="Loading....">
+                <h2 class="classh2">Free Food</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci accusantium corrupti atque.</p>
+            </div>
+
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary center"> Our Clients</h1>
+        <div id="Clients">
+            <div class="client-items">
+                <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Loading">
+            </div>
+            <div class="client-items">
+                <img src="https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Loading">
+            </div>
+            <div class="client-items">
+                <img src="https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fG1hbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Loading">
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1 class="h-primary center"> Our contacts </h1>
+        <div id="contact-box">
+            <form>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="name" id="email" placeholder="Enter your no.">
+                </div>
+                <div class="form-group">
+                    <label for="phone no">Phone no:</label>
+                    <input type="phone" name="name" id="email" placeholder="Enter your no.">
+                </div>
+                <div class="form-group">
+                    <label for="message">Any message:</label>
+                    <!-- <input type="email" name="name" id="email" placeholder="Enter your Message"> -->
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+
+
+        </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
